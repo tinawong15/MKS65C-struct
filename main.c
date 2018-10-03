@@ -5,7 +5,7 @@
 
 struct dessert {
   int price;
-  char food [256];
+  char name [256];
 };
 
 struct dessert randomStruct() {
@@ -13,13 +13,17 @@ struct dessert randomStruct() {
   struct dessert s0;
   srand(time(NULL));
   s0.price = rand() / 10000000;
-  strcpy(s0.food, arr[rand() % 3]);
+  strcpy(s0.name, arr[rand() % 3]);
   return s0;
 }
 
+int printVar(struct dessert test) {
+  printf("Name of Dessert: %s\n", test.name);
+  printf("Price of Dessert: $%d\n", test.price);
+  return 0;
+}
 int main() {
   struct dessert test0 = randomStruct();
-  printf("%d\n", test0.price);
-  printf("%s\n", test0.food);
+  printVar(test0);
   return 0;
 }
