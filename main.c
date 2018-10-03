@@ -1,31 +1,25 @@
 # include <stdio.h>
 # include <string.h>
+# include <stdlib.h>
 # include <time.h>
-int randomStruct() {
-  // srand(time(NULL));
-  // printf("%d\n", rand());
-  return 0;
+
+struct dessert {
+  int price;
+  char food [256];
+};
+
+struct dessert randomStruct() {
+  char *arr[3] = {"cookie", "chocolate", "cupcake"};
+  struct dessert s0;
+  srand(time(NULL));
+  s0.price = rand() / 10000000;
+  strcpy(s0.food, arr[rand() % 3]);
+  return s0;
 }
 
 int main() {
-  struct foo {
-    int price;
-    char food [256];
-  };
-  struct foo s0;
-  s0.price = 1;
-  strcpy(s0.food,"cookie");
-  struct foo s1;
-  s1.price = 2;
-  strcpy(s1.food,"chocolate");
-  struct foo s2;
-  s2.price = 5;
-  strcpy(s0.food,"cupcake");
-  printf("%d\n", s0.price);
-  printf("%s\n", s0.food);
-  printf("%d\n", s1.price);
-  printf("%s\n", s1.food);
-  printf("%d\n", s2.price);
-  printf("%s\n", s2.food);
+  struct dessert test0 = randomStruct();
+  printf("%d\n", test0.price);
+  printf("%s\n", test0.food);
   return 0;
 }
