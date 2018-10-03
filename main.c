@@ -12,7 +12,7 @@ struct dessert randomStruct() {
   char *arr[3] = {"cookie", "chocolate", "cupcake"};
   struct dessert s0;
   srand(time(NULL));
-  s0.price = rand() / 10000000;
+  s0.price = rand() / 100;
   strcpy(s0.name, arr[rand() % 3]);
   return s0;
 }
@@ -22,6 +22,11 @@ int printVar(struct dessert test) {
   printf("Price of Dessert: $%d\n", test.price);
   return 0;
 }
+
+int editStruct(struct dessert test) {
+  return 0;
+}
+
 int main() {
   struct dessert test0 = randomStruct();
   printVar(test0);
