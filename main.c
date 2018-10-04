@@ -29,6 +29,16 @@ int editStruct(struct dessert * test, int p, char n []) {
   return 0;
 }
 
+int editStructBoth(struct dessert * test){
+	//struct dessert * pointa = &test;
+	test -> price += 2;
+	strcpy(test -> name,"ytb");
+		////strcpy(,"YATA");
+		return 0;
+	}
+
+
+
 int increment(struct dessert * test) {
   (*test).price++;
   int i;
@@ -43,6 +53,7 @@ int main() {
   printVar(test0);
   // printf("%p\n", &test0);
   editStruct(&test0, 50, "cake");
+  editStructBoth(&test0);
   printVar(test0);
   increment(&test0);
   printVar(test0);
