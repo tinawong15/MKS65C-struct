@@ -50,12 +50,21 @@ int increment(struct dessert * test) {
 
 int main() {
   struct dessert test0 = randomStruct();
+  struct dessert test2 = randomStruct();
+  printf("first test \n");
   printVar(test0);
   // printf("%p\n", &test0);
   editStruct(&test0, 50, "cake");
   editStructBoth(&test0);
-  printVar(test0);
+ // printVar(test0);
   increment(&test0);
+  printf("first test after changes \n");
   printVar(test0);
+
+  printf("second test \n");
+  printVar(test2);
+  editStructBoth(&test2);
+  printf("second test after changes \n");
+  printVar(test2);
   return 0;
 }
