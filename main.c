@@ -29,11 +29,22 @@ int editStruct(struct dessert * test, int p, char n []) {
   return 0;
 }
 
+int increment(struct dessert * test) {
+  (*test).price++;
+  int i;
+  for(i = 0; i < strlen((*test).name); i++) {
+    (*test).name[i]++;
+  }
+  return 0;
+}
+
 int main() {
   struct dessert test0 = randomStruct();
   printVar(test0);
   // printf("%p\n", &test0);
   editStruct(&test0, 50, "cake");
+  printVar(test0);
+  increment(&test0);
   printVar(test0);
   return 0;
 }
